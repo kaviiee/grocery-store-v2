@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        h3{
+            color: rgb(3, 75, 21);
+            text-decoration: underline;
+        }
+        div{
+            color: brown;
+        }
+        #thanks{
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+        h4{
+            color: blue;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <p style="text-decoration: none;">Hello {{user}} &#128400;</p>
+    {% if role=="user"%}
+    <h4>Welcome and Congrats on becoming a member of Grocery Store App family. </h4><br>
+    <h3>Welcome to the Grocery Store app</h3>
+       <div>
+        We are thrilled to have you &#128512;.
+        You can buy groceries from us.
+       </div>
+    <div class="list">
+        <ul style="color: rgb(75, 74, 74);">
+            <li>You can add as many items as you want into your cart</li>
+            <li>You can buy groceries from us with a single click</li>
+        </ul>
+    </div>
+    {% else %}
+    <h4>Welcome and Congrats on becoming a member of Grocery Store App family. </h4><br>
+    <div>
+        We are thrilled to have you in our team &#128512;.
+        Congratulations on your promotion to a store manager.
+       </div>
+       <div class="list">
+        <ul style="color: rgb(75, 74, 74);">
+            <li>You can add, edit, and delete categories</li>
+            <li>You can add, edit, and delete products</li>
+        </ul>
+    </div>
+    {%endif%}
+    <div id="thanks"><b>
+        Happy Shopping!!<br>
+        Regards,<br>
+        Grocery Store App Team</b>
+    </div>
+</body>
+</html>

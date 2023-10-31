@@ -1,0 +1,54 @@
+***FOR REFERENCE ONLY***
+--TO CREATE ENV
+pip install virtualenv
+virtualenv env
+
+--TO activate ENV 
+.\\env\Scripts\activate.bat
+
+pip install flask flask-sqlalchemy
+pip install flask-login
+python firstflask
+--FOR DB CREATION
+python (starts python shell)
+from firstflask(python filename) import app,db
+app.app_context().push()
+db.create_all()
+
+
+--git commands
+
+git init
+git add .
+git commit -m 'initial commit'
+git config --global user.email "kavishaparikh132@gmail.com"
+git config --global user.name "kaviiee"
+git commit -m 'initial commit'
+git branch -M master
+git remote add origin https://github.com/kaviiee/grocery-store.git
+git push origin master
+
+git add .
+
+--after git add . ,if there is a line endings warning for crlf, to  handle line ending conversions automatically command:
+git config --global core.autocrlf true
+--Manually convert line endings in the file:
+dos2unix migrations/versions/4cea76c4db32_role.py  (dos2unix is the command, file.py is the string given in your warning)
+
+git commit -m 'initial commit'
+git push origin master
+
+--db migration
+pip install Flask-Migrate
+--initial migration
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+--subsequent migration
+flask db migrate -m "Description of changes"
+flask db upgrade
+
+--to revert a migration
+flask db stamp head
+flask db history
+flask db downgrade <migration_id>

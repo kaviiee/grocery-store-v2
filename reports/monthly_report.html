@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2> Hello {{user}}</h2>
+    <h3 style="color:chocolate;text-align: center;"> Here is your monthly report of Grocery Store App </h3><hr style="color:blue">
+    {% if all_transactions==[] %}
+      <p>You have not bought anything till now</p>
+      <p>Please buy groceries from us</p>
+      <h3 style="color:red">Your total amount is 0</h3>
+    {% else %}
+    <h2 style="text-align: center;">Transaction Details</h2>
+
+    {% for transaction in all_transactions %}
+       <h3>Transaction {{loop.index}}.</h3> <br>
+       <p><span>Date of transaction: </span>: {{transaction['transaction_date']}}</p>
+       <p><span>Amount: </span>:{{transaction['amount']}}</p><br>
+    {% endfor %}
+    <h2>Your total expenditure for this month is: {{total}}</h2>
+    {% endif %}
+
+</body>
+</html>
